@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Valentine 💖</title>
+
+    <!-- Cute Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff3366;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff3366;
+            color: white;
+        }
+
+        #no {
+            background-color: gray;
+            color: white;
+            position: absolute;
+        }
+
+        #letter {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {transform: translateY(0);}
+            100% {transform: translateY(-800px);}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Will you be my Valentine? 💘</h1>
+
+    <!-- 👉 Yahan tum dono ki photo aayegi -->
+    
+
+    <br>
+
+    <button id="yes" onclick="showLetter()">YES 💖</button>
+    <button id="no" onmouseover="moveNo()">NO 😜</button>
+
+    <div id="letter">
+        <p>
+            My pookieee ❤️ <br><br>
+            mujhe pta hai ki tujhe ye bat pata hai ki mai kab gussa hoti hun or kab khush hoti hun or dono me hi teri maherbani hai pr mujhe zindgi bhr asa 
+            hi chahiye.meri dukh or such ki wajah tu hi hona chahiye(me abhi bhi gussa hun)pr me ye valentine khrab ny krna chahti is gusse ki vajah se.
+            to fir se ye yaad diladu ki i still loves you the way i always do and i will. you're my forever and ever and ever...  <br><br>
+              
+            I promise to annoy you forever 😜💕  
+            <br><br>
+            Yours always 💖
+        </p>
+    </div>
+</div>
+
+<script>
+    function showLetter() {
+        document.getElementById("letter").style.display = "block";
+    }
+
+    function moveNo() {
+        let x = Math.random() * (window.innerWidth - 100);
+        let y = Math.random() * (window.innerHeight - 50);
+        document.getElementById("no").style.left = x + "px";
+        document.getElementById("no").style.top = y + "px";
+    }
+
+    // floating hearts
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "100%";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }, 500);
+</script>
+
+</body>
+</html>
